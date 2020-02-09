@@ -1,0 +1,18 @@
+
+		  File f=new File("t.xlsx");
+		  
+		  //System.err.println(f.getName());
+		  FileInputStream stream =new
+		  FileInputStream(f);
+		  Workbook workBook=new XSSFWorkbook(stream);
+		  //workbook.getSheetAt(0) 
+		  Sheet sheetAt = workBook.getSheetAt(0);
+		  for (int i =0; i <=sheetAt.getLastRowNum(); i++){
+		   Row row = sheetAt.getRow(i);
+		  //System.err.println(i);
+		  for (int j = 0; j < row.getLastCellNum(); j++) {
+		  Cell cell=row.getCell(j);
+		  System.err.println(cell.getStringCellValue());
+		  }
+		  
+		  }
